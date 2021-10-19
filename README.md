@@ -1,1 +1,3 @@
-# 420-is2-2pam
+# Programowanie aplikacji mobilnych
+
+Abraham Kaczmarski, Łukasz Karwowski
