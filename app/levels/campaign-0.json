@@ -1,0 +1,113 @@
+{
+  "title": "Campaign1",
+  "levels": [
+    {
+      "id": 0,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Wyruszyłeś statkiem w podróż na swoje wymarzone wakacje. Podróż przebiega bezproblemowo, wiatr jest łagodny a słońce świeci w całej okazałości."
+        },
+        {
+          "text": "W nocy gdy kładziesz się do swojej kajuty słyszysz jak wiatr przybiera na sile a fale coraz mocniej uderzają o statek. Nagle słyszysz głośny dźwięk, a statek zaczyna się trząść."
+        },
+        { "text": "Co robisz?" }
+      ],
+      "choices": [
+        {
+          "destination": 1,
+          "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
+        },
+        {
+          "destination": 2,
+          "description": "Wychodzisz z kajuty w poszukiwaniu innych osób, aby dowiedzieć się co się dzieje."
+        },
+        {
+          "destination": 3,
+          "description": "Wychodzisz z kajuty na wyższą część statku, aby sprawdzić co się dzieje."
+        }
+      ]
+    },
+
+    {
+      "id": 1,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Czekasz w swojej kajucie na zewnątrz storm zaczyna zbierać w sile z każdą minutą."
+        },
+        {
+          "text": "Zaczynasz się niepokoić. Na korytarzu słychać dźwięk biegnących osób oraz głośne krzyki współpasażerów. Zauważasz że przez przestrzeń pomiędzy drzwiami a podłogą zaczyna wpływać woda."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
+        },
+        {
+          "destination": null,
+          "description": "Wychodzisz z kajuty w poszukiwaniu innych osób, aby dowiedzieć się co się dzieje."
+        },
+        {
+          "destination": null,
+          "description": "Wychodzisz z kajuty na wyższą część statku, aby sprawdzić co się dzieje."
+        }
+      ]
+    },
+
+    {
+      "id": 2,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Wyszedłeś z kajuty. Rozglądasz się wokół siebie."
+        },
+        {
+          "text": "Na końcu korytarza zauważasz osoby wybiegające na wyższe poziomy statku. Na korytarzu widzisz jak po podłodze znajduje się woda wypływająca z dolnych poziomów statku. Podążasz za ludźmi."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
+        },
+        {
+          "destination": null,
+          "description": "Podążasz za osobami patrząc gdzie podążają."
+        },
+        {
+          "destination": null,
+          "description": "Ignorujesz osoby i idziesz w innym kierunku."
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Wybiegasz z kajuty udając się do schodów prowadzących na wyższy poziom statku."
+        },
+        {
+          "text": "Widzisz pojedyncze zaniepokojone osoby wychodzące ze swoich pokoi. Biegniesz po schodach na górną część statku."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Szukasz kapitana statku aby dowiedzieć co się dzieje."
+        },
+        {
+          "destination": null,
+          "description": "Pytasz współpasażerów o informacje."
+        },
+        {
+          "destination": null,
+          "description": "Wyglądasz za burtę statku próbując samemu dowiedzieć się o stanie sytuacji."
+        }
+      ]
+    }
+  ]
+}
