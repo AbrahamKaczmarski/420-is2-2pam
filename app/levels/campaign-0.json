@@ -46,11 +46,11 @@
           "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
         },
         {
-          "destination": null,
+          "destination": 4,
           "description": "Wychodzisz z kajuty w poszukiwaniu innych osób, aby dowiedzieć się co się dzieje."
         },
         {
-          "destination": null,
+          "destination": 3,
           "description": "Wychodzisz z kajuty na wyższą część statku, aby sprawdzić co się dzieje."
         }
       ]
@@ -69,16 +69,12 @@
       ],
       "choices": [
         {
-          "destination": null,
-          "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
-        },
-        {
-          "destination": null,
+          "destination": 4,
           "description": "Podążasz za osobami patrząc gdzie podążają."
         },
         {
-          "destination": null,
-          "description": "Ignorujesz osoby i idziesz w innym kierunku."
+          "destination": 5,
+          "description": "Ignorujesz osoby i idziesz na pokład statku."
         }
       ]
     },
@@ -96,16 +92,144 @@
       ],
       "choices": [
         {
-          "destination": null,
+          "destination": 6,
           "description": "Szukasz kapitana statku aby dowiedzieć co się dzieje."
         },
         {
-          "destination": null,
+          "destination": 4,
           "description": "Pytasz współpasażerów o informacje."
         },
         {
-          "destination": null,
+          "destination": 5,
           "description": "Wyglądasz za burtę statku próbując samemu dowiedzieć się o stanie sytuacji."
+        }
+      ]
+    },
+
+    {
+      "id": 4,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Rozmawiasz z napotkanymi pasażerami. Rozmawiacie o sytuacji w której się znaleźliście."
+        },
+        {
+          "text": "Żadne z was nie zna odpowiedzi. Widzicie że woda zbliża się coraz szybciej w waszym kierunku. Jak najszybciej udajecie się na pokład statku."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 6,
+          "description": "Szukacie kapitana statku aby dowiedzieć co się dzieje."
+        },
+        {
+          "destination": 5,
+          "description": "Wyglądacie za burtę statku próbując samemu dowiedzieć się o stanie sytuacji."
+        }
+      ]
+    },
+
+    {
+      "id": 5,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Wyglądasz za burtę. Widzisz że dziób statku utknął w skałach, w wyniku czego w statku powstała wielka dziura przez, którą wlewa się morska woda."
+        },
+        {
+          "text": "Jesteś przerażony. Ludzie panikują."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 6,
+          "description": "Szukasz kapitana statku aby dowiedzieć co się dzieje."
+        }
+      ]
+    },
+
+    {
+      "id": 6,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Biegniesz w stronę mostka kapitańskiego, gdy nagle słyszysz rozbrzmiewający sygnał alarmowy."
+        },
+        {
+          "text": "Personel statku zaczyna się zbiegać. Zaczynają uspokajać ludzi."
+        },
+        {
+          "text": "Na pokład zaczynają wlewać się fale, które wyprowadzają z równowagi część ludzi."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 7,
+          "description": "Podążasz dalej w kierunku kapitana."
+        },
+        {
+          "destination": null,
+          "description": "Zostajesz na pokładzie czekając na instrukcje od personelu statku."
+        }
+      ]
+    },
+
+    {
+      "id": 7,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Docierasz do mostka. Rozmawiasz z kapitanem. Dowiadujesz się że statek tonie, a z każdą minutą jest coraz groźniej."
+        },
+        {
+          "text": "Kapitan skontaktował się z najbliższym portem."
+        },
+        {
+          "text": "Pomoc jest w drodze, jednak nie wiadomo kiedy przybędą na miejsce."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 8,
+          "description": "Czekasz na pomoc, która ma przybyć."
+        },
+        {
+          "destination": null,
+          "description": "Wracasz na pokład czekając na instrukcje od personelu statku."
+        },
+        {
+          "destination": null,
+          "description": "Wracasz na pokład czekając na instrukcje od personelu statku."
+        }
+      ]
+    },
+
+    {
+      "id": 8,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Sytacja staje się coraz bardziej niepokojąca."
+        },
+        {
+          "text": "Woda coraz szybciej wpływa do statku."
+        },
+        {
+          "text": "Kapitan ogłasza ewakuacje. Personel zaczyna prowadzić ludzi do szlup ratunkowych."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Ustawiasz się w kolejce do szalupy."
+        },
+        {
+          "destination": null,
+          "description": "Walczysz i wpychasz się w kolejkę do szalup."
+        },
+        {
+          "destination": null,
+          "description": "Wyskakujesz za burtę."
         }
       ]
     }
