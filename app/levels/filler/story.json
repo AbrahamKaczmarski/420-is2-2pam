@@ -1,0 +1,28 @@
+{
+  "title": "Filler",
+  "levels": [
+    {
+      "id": 0,
+      "location": "Statek wycieczkowy",
+      "story": [
+        { "text": "Akapit 1" },
+        { "text": "Akapit 2" },
+        { "text": "Akapit 3" }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
+        },
+        {
+          "destination": null,
+          "description": "Wychodzisz z kajuty w poszukiwaniu innych osób, aby dowiedzieć się co się dzieje."
+        },
+        {
+          "destination": null,
+          "description": "Wychodzisz z kajuty na wyższą część statku, aby sprawdzić co się dzieje."
+        }
+      ]
+    }
+  ]
+}
