@@ -23,6 +23,29 @@
           "description": "Wychodzisz z kajuty na wyższą część statku, aby sprawdzić co się dzieje."
         }
       ]
+    },
+    {
+      "id": 0,
+      "location": "Statek wycieczkowy",
+      "story": [
+        { "text": "Akapit 4" },
+        { "text": "Akapit 5" },
+        { "text": "Akapit 6" }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
+        },
+        {
+          "destination": null,
+          "description": "Wychodzisz z kajuty w poszukiwaniu innych osób, aby dowiedzieć się co się dzieje."
+        },
+        {
+          "destination": null,
+          "description": "Wychodzisz z kajuty na wyższą część statku, aby sprawdzić co się dzieje."
+        }
+      ]
     }
   ]
 }

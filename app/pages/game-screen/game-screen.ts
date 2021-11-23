@@ -3,5 +3,5 @@ import { GameViewModel } from "./game-view-model";
 
 export function navigatingTo(args: EventData) {
   const page = <Page>args.object;
-  page.bindingContext = new GameViewModel();
+  page.bindingContext = new GameViewModel(page);
 }
