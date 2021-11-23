@@ -42,7 +42,7 @@
       ],
       "choices": [
         {
-          "destination": null,
+          "destination": 9,
           "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
         },
         {
@@ -168,7 +168,7 @@
           "description": "Podążasz dalej w kierunku kapitana."
         },
         {
-          "destination": null,
+          "destination": 8,
           "description": "Zostajesz na pokładzie czekając na instrukcje od personelu statku."
         }
       ]
@@ -192,10 +192,6 @@
         {
           "destination": 8,
           "description": "Czekasz na pomoc, która ma przybyć."
-        },
-        {
-          "destination": null,
-          "description": "Wracasz na pokład czekając na instrukcje od personelu statku."
         },
         {
           "destination": null,
@@ -230,6 +226,66 @@
         {
           "destination": null,
           "description": "Wyskakujesz za burtę."
+        }
+      ]
+    },
+
+    {
+      "id": 9,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Woda zaczyna wlewać ci się do kajuty."
+        },
+        {
+          "text": "Próbujesz otworzyć drzwi, jednak się zatrzasneły. Po kilku próbach udaje się je otworzyć."
+        },
+        {
+          "text": "Woda sięga ci do pasa. Jak najszybciej udajesz się w stronę pokładu. Na nim zauważasz persinel satku wydający polecenia pasażerom."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 7,
+          "description": "Podążasz w kierunku kapitana."
+        },
+        {
+          "destination": 8,
+          "description": "Zostajesz na pokładzie czekając na instrukcje od personelu statku."
+        },
+        {
+          "destination": 5,
+          "description": "Wyglądacie za burtę statku próbując samemu dowiedzieć się o stanie sytuacji."
+        }
+      ]
+    },
+
+    {
+      "id": 10,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Woda zaczyna wlewać ci się do kajuty."
+        },
+        {
+          "text": "Próbujesz otworzyć drzwi, jednak się zatrzasneły. Po kilku próbach udaje się je otworzyć."
+        },
+        {
+          "text": "Woda sięga ci do pasa. Jak najszybciej udajesz się w stronę pokładu. Na nim zauważasz persinel satku wydający polecenia pasażerom."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 7,
+          "description": "Podążasz w kierunku kapitana."
+        },
+        {
+          "destination": 8,
+          "description": "Zostajesz na pokładzie czekając na instrukcje od personelu statku."
+        },
+        {
+          "destination": 5,
+          "description": "Wyglądacie za burtę statku próbując samemu dowiedzieć się o stanie sytuacji."
         }
       ]
     }
