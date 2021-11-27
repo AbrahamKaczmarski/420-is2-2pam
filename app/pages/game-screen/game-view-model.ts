@@ -15,14 +15,11 @@ const campaign = require("../../levels/filler/story.json");
 
 export class GameViewModel extends Observable {
   private _page: Page;
-  private _storyUi: StackLayout;
-  private _choiceUi: StackLayout;
-  private _counter: number;
-  private _id: number;
-  private _message: string;
   private _title: string;
-  // private _story: string;
+  private _id: number;
   private _location: string;
+  private _story: StackLayout;
+  private _choices: StackLayout;
   // private _documents: Folder;
 
   constructor(page: Page) {
@@ -30,31 +27,18 @@ export class GameViewModel extends Observable {
 
     this._page = page;
     this._title = campaign.title;
-    this._storyUi = page.getViewById("story");
-    this._choiceUi = page.getViewById("choices");
+    this._story = page.getViewById("story");
+    this._choices = page.getViewById("choices");
 
-    this._counter = 42;
     this._id = 0;
-    this._location = campaign.title ?? "untitled";
     this.updateScene();
     // this._documents = knownFolders.currentApp();
 
-    // TODO: fix permissions to read files or find another way
+    // TODO: read json from file system
     // this._documents.getEntities().then((files) => {
     //   this._story = files.length.toFixed();
     // });
   }
-
-  // get story(): string {
-  //   return this._story;
-  // }
-
-  // set story(value: string) {
-  //   if (this._story !== value) {
-  //     this._story = value;
-  //     this.notifyPropertyChange("story", value);
-  //   }
-  // }
 
   get title(): string {
     return this._title;
@@ -64,24 +48,6 @@ export class GameViewModel extends Observable {
     if (this._title !== value) {
       this._title = value;
       this.notifyPropertyChange("title", value);
-    }
-  }
-
-  get message(): string {
-    return this._message;
-  }
-
-  set message(value: string) {
-    if (this._message !== value) {
-      this._message = value;
-      this.notifyPropertyChange("message", value);
-    }
-  }
-
-  set id(value: number) {
-    if (this._id !== value) {
-      this._id = value;
-      this.notifyPropertyChange("message", value);
     }
   }
 
@@ -96,23 +62,22 @@ export class GameViewModel extends Observable {
     }
   }
 
-  onNext() {
-    this._id = (this._id + 1) % campaign.levels.length;
-    this.updateScene();
-  }
-
-  private goTo(id: number) {
+  goTo(id: number) {
     this._id = id;
     this.updateScene();
   }
 
   private updateScene() {
     const level = campaign.levels[this._id];
-    this._storyUi.removeChildren();
+    // -- location
+    this.location = level.location;
+    // -- story paragraphs
+    this._story.removeChildren();
     level.story.forEach((segment) => {
       this.addStoryParagraph(segment.text);
     });
-    this._choiceUi.removeChildren();
+    // -- choice buttons
+    this._choices.removeChildren();
     level.choices.forEach((choice) => {
       this.addChoiceButton(choice);
     });
@@ -121,26 +86,17 @@ export class GameViewModel extends Observable {
   private addStoryParagraph(text: string) {
     const label = new Label();
     label.text = text;
-    this._storyUi.addChild(label);
+    this._story.addChild(label);
   }
 
   private addChoiceButton({ description, destination }: Choice) {
     const button = new Button();
     button.text = description;
     button.addEventListener("tap", () => this.goTo(destination));
-    this._choiceUi.addChild(button);
+    this._choices.addChild(button);
   }
 
   onMainMenu() {
     this._page.frame.navigate("main-menu");
   }
-
-  // private updateMessage() {
-  //   if (this._counter <= 0) {
-  //     this.message =
-  //       "Hoorraaay! You unlocked the NativeScript clicker achievement!";
-  //   } else {
-  //     this.message = `${this._counter} taps left`;
-  //   }
-  // }
 }

@@ -3,11 +3,7 @@
     <StackLayout class="p-20">
         <Button text="Main menu" tap="{{ onMainMenu }}" class="-primary" />
         <Label text="{{ location }}" class="h1" textWrap="true" />
-        <!-- <Label text="{{ message }}" class="h2 text-center" textWrap="true" /> -->
-        <StackLayout id="story">
-        </StackLayout>
-        <StackLayout id="choices">
-            <Button text="Next" tap="{{ onNext }}" class="-primary" />
-        </StackLayout>
+        <StackLayout id="story"></StackLayout>
+        <StackLayout id="choices"></StackLayout>
     </StackLayout>
 </Page>
