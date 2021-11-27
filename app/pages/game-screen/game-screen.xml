@@ -7,7 +7,6 @@
         <StackLayout id="story">
         </StackLayout>
         <StackLayout id="choices">
-            <Button text="Clear" tap="{{ onClear }}" class="-primary" />
             <Button text="Next" tap="{{ onNext }}" class="-primary" />
         </StackLayout>
     </StackLayout>

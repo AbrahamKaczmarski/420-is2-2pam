@@ -7,6 +7,8 @@ import {
   StackLayout,
 } from "@nativescript/core";
 
+import { Choice } from "~/types";
+
 // import { Folder, knownFolders } from "@nativescript/core/file-system";
 
 const campaign = require("../../levels/filler/story.json");
@@ -99,10 +101,20 @@ export class GameViewModel extends Observable {
     this.updateScene();
   }
 
+  private goTo(id: number) {
+    this._id = id;
+    this.updateScene();
+  }
+
   private updateScene() {
+    const level = campaign.levels[this._id];
     this._storyUi.removeChildren();
-    campaign.levels[this._id].story.forEach((segment) => {
+    level.story.forEach((segment) => {
       this.addStoryParagraph(segment.text);
+    });
+    this._choiceUi.removeChildren();
+    level.choices.forEach((choice) => {
+      this.addChoiceButton(choice);
     });
   }
 
@@ -110,6 +122,13 @@ export class GameViewModel extends Observable {
     const label = new Label();
     label.text = text;
     this._storyUi.addChild(label);
+  }
+
+  private addChoiceButton({ description, destination }: Choice) {
+    const button = new Button();
+    button.text = description;
+    button.addEventListener("tap", () => this.goTo(destination));
+    this._choiceUi.addChild(button);
   }
 
   onMainMenu() {

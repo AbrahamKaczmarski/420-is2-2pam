@@ -3,7 +3,7 @@
   "levels": [
     {
       "id": 0,
-      "location": "Statek wycieczkowy",
+      "location": "Miejsce 1",
       "story": [
         { "text": "Akapit 1" },
         { "text": "Akapit 2" },
@@ -11,22 +11,14 @@
       ],
       "choices": [
         {
-          "destination": null,
-          "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
-        },
-        {
-          "destination": null,
-          "description": "Wychodzisz z kajuty w poszukiwaniu innych osób, aby dowiedzieć się co się dzieje."
-        },
-        {
-          "destination": null,
-          "description": "Wychodzisz z kajuty na wyższą część statku, aby sprawdzić co się dzieje."
+          "destination": 1,
+          "description": "Idź do 2"
         }
       ]
     },
     {
-      "id": 0,
-      "location": "Statek wycieczkowy",
+      "id": 1,
+      "location": "Miejsce 1",
       "story": [
         { "text": "Akapit 4" },
         { "text": "Akapit 5" },
@@ -34,16 +26,27 @@
       ],
       "choices": [
         {
-          "destination": null,
-          "description": "Zostajesz w kajucie i czekasz na rozwój wydarzeń."
+          "destination": 0,
+          "description": "Wróć do 1"
         },
         {
-          "destination": null,
-          "description": "Wychodzisz z kajuty w poszukiwaniu innych osób, aby dowiedzieć się co się dzieje."
-        },
+          "destination": 2,
+          "description": "Idź do 3"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "location": "Miejsce 2",
+      "story": [
+        { "text": "Akapit 7" },
+        { "text": "Akapit 8" },
+        { "text": "Akapit 9" }
+      ],
+      "choices": [
         {
-          "destination": null,
-          "description": "Wychodzisz z kajuty na wyższą część statku, aby sprawdzić co się dzieje."
+          "destination": 0,
+          "description": "Wróć na początek"
         }
       ]
     }
