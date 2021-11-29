@@ -194,7 +194,7 @@
           "description": "Czekasz na pomoc, która ma przybyć."
         },
         {
-          "destination": null,
+          "destination": 11,
           "description": "Wracasz na pokład czekając na instrukcje od personelu statku."
         }
       ]
@@ -216,11 +216,11 @@
       ],
       "choices": [
         {
-          "destination": null,
+          "destination": 11,
           "description": "Ustawiasz się w kolejce do szalupy."
         },
         {
-          "destination": null,
+          "destination": 12,
           "description": "Walczysz i wpychasz się w kolejkę do szalup."
         },
         {
@@ -286,6 +286,77 @@
         {
           "destination": 5,
           "description": "Wyglądacie za burtę statku próbując samemu dowiedzieć się o stanie sytuacji."
+        }
+      ]
+    },
+
+    {
+      "id": 11,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Stojąc w kolejce do szalupy widzisz jak kilku pasażerów zaczyna wszczynać bujkę."
+        },
+        {
+          "text": "Personel próbuje rozdzielić szarpiące się osoby."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 13,
+          "description": "Przyglądasz się całemu zdarzeniu czekając na dalszy rozwój wydarzeń."
+        },
+        {
+          "destination": 12,
+          "description": "Dołączasz się do bójki próbując pomóc w zaistniałej sytuacji."
+        }
+      ]
+    },
+
+    {
+      "id": 12,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "W trakcie bójki zostajesz mocno uderzony w głowę przez co tracisz przytomność."
+        },
+        {
+          "text": "Odzyskujesz przytomność w szalupie. Wysokie wale uderzają w mały statek."
+        },
+        {
+          "text": "Współpasarzerowie są przerażeni."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Pytasz osoby obok co się wydarzyło, gry byłeś nie przytomny."
+        }
+      ]
+    },
+
+    {
+      "id": 13,
+      "location": "Statek wycieczkowy",
+      "story": [
+        {
+          "text": "Widzisz jak personel statku próbuje zarzegnać kryzys."
+        },
+        {
+          "text": "Po dłuższej chwili udało się uspokoić ludzi. Nadeszła twoja kolej. Wchodzisz dos szalupy z innymi ludźmi."
+        },
+        {
+          "text": "Po kilku minutach wielka fala zalewa waszą szalupę wyrzucając cię za burtę."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Szukasz czegoś aby się złapać."
+        },
+        {
+          "destination": null,
+          "description": "Szukasz ludzi z którymi płynąłeś."
         }
       ]
     }
