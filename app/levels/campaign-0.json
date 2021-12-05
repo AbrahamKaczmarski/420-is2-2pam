@@ -330,7 +330,7 @@
       "choices": [
         {
           "destination": null,
-          "description": "Pytasz osoby obok co się wydarzyło, gry byłeś nie przytomny."
+          "description": "Pytasz osoby obok co się wydarzyło, gdy byłeś nie przytomny."
         }
       ]
     },
@@ -351,12 +351,64 @@
       ],
       "choices": [
         {
-          "destination": null,
+          "destination": 14,
           "description": "Szukasz czegoś aby się złapać."
         },
         {
-          "destination": null,
+          "destination": 15,
           "description": "Szukasz ludzi z którymi płynąłeś."
+        }
+      ]
+    },
+
+    {
+      "id": 14,
+      "location": "Jaskinia",
+      "story": [
+        {
+          "text": "Rozglądasz się dookoła. Widzisz pojedyncze przedmioty, które znajdowały się na statku."
+        },
+        {
+          "text": "Łapiesz się pierwszej rzeczy unoszącej się na wodzie, jednak wielka fala zakrywa cię. Tracisz przytomność."
+        },
+        {
+          "text": "Buszisz się w ciemnej jaskini. Strumień światła dochodzi przez sazaczelinę."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Rozglądasz się za przedmiotami wokół sibie."
+        },
+        {
+          "destination": null,
+          "description": "Podążasz w głąb jaskini w poszukiwaniu wyjśćia."
+        }
+      ]
+    },
+
+    {
+      "id": 15,
+      "location": "Wyspa",
+      "story": [
+        {
+          "text": "Rozglądasz się dookoła, nie widząc nikogo. Płyniesz w poszukiuwaniu innych osób jednak przez ograniczoną widoczność nikogo nie znajdujesz."
+        },
+        {
+          "text": "Widzisz jak nadciąga wielka fala. Próbujesz odpłynąć jedank zostajesz zakryty przez nią tracąc przytomność."
+        },
+        {
+          "text": "Budzisz się na plaży. Nie widzisz nikogo innego wokół."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Rozglądasz się za przedmiotami wokół sibie."
+        },
+        {
+          "destination": null,
+          "description": "Podążasz w głąb jaskini w poszukiwaniu wyjśćia."
         }
       ]
     }
