@@ -13,7 +13,10 @@
     "paths": {
       "~/*": ["app/*"],
       "@/*": ["app/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["app/**/*"],
   "files": ["./references.d.ts"],

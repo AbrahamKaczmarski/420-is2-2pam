@@ -1,0 +1,63 @@
+{
+  "title": "Filler 2",
+  "levels": [
+    {
+      "id": 0,
+      "location": "Miejsce 17",
+      "story": [
+        {
+          "text": "Dopóki nie będziesz cenić siebie, nie będziesz cenić własnego czasu."
+        },
+        {
+          "text": "Potykając się, można zajść daleko; nie wolno tylko upaść i nie podnieść się."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 1,
+          "description": "Idź do 17"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "location": "Miejsce 26",
+      "story": [
+        {
+          "text": "Ważniejsze jest, co ty myślisz o sobie samym, niż to, co o tobie myślą inni."
+        },
+        {
+          "text": "Nigdy nie rezygnuj z celu tylko dlatego, że osiągnięcie go wymaga czasu. Czas i tak upłynie."
+        },
+        {
+          "text": "Jeśli nie czujesz się godny, by wyrosły Ci skrzydła, nigdy nie oderwiesz się od ziemi."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 0,
+          "description": "Kanapka kanapka"
+        },
+        {
+          "destination": 2,
+          "description": "Naprzód!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "location": "Miejsce 1 3/4",
+      "story": [
+        {
+          "text": "Weź życie we własne ręce. I co się wtedy stanie? Coś strasznego: Nie będzie kogo obwiniać."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 0,
+          "description": ":-)"
+        }
+      ]
+    }
+  ]
+}

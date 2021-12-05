@@ -9,10 +9,6 @@ import {
 
 import { Choice } from "~/types";
 
-// import { Folder, knownFolders } from "@nativescript/core/file-system";
-
-const campaign = require("../../levels/filler/story.json");
-
 export class GameViewModel extends Observable {
   private _page: Page;
   private _title: string;
@@ -26,7 +22,7 @@ export class GameViewModel extends Observable {
     super();
 
     this._page = page;
-    this._title = campaign.title;
+    this._title = global.campaign.title;
     this._story = page.getViewById("story");
     this._choices = page.getViewById("choices");
 
@@ -68,7 +64,7 @@ export class GameViewModel extends Observable {
   }
 
   private updateScene() {
-    const level = campaign.levels[this._id];
+    const level = global.campaign.levels[this._id];
     // -- location
     this.location = level.location;
     // -- story paragraphs

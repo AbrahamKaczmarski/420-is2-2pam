@@ -1,0 +1,8 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="{{ title }}" icon="" />
+    <StackLayout class="p-20">
+        <Button text="Main menu" tap="{{ onMainMenu }}" class="-primary" />
+        <Label text="Choose a campaign" class="h1" textWrap="true" />
+        <StackLayout id="campaigns"></StackLayout>
+    </StackLayout>
+</Page>
