@@ -403,12 +403,54 @@
       ],
       "choices": [
         {
-          "destination": null,
+          "destination": 16,
           "description": "Rozglądasz się za przedmiotami wokół sibie."
         },
         {
           "destination": null,
-          "description": "Podążasz w głąb jaskini w poszukiwaniu wyjśćia."
+          "description": "Podążasz w głąb wyspy."
+        }
+      ]
+    },
+
+    {
+      "id": 16,
+      "location": "Wyspa",
+      "story": [
+        {
+          "text": "Rozglądasz się do okoła. Na plaży znajdują się rozbite skrzynie i pojedyncze przedmioty ze statku."
+        },
+        {
+          "text": "Znajdujesz trochę jedzenia i wody, a takrze zapalniczkę i trochę ubrań współ pasarzerów."
+        },
+        {
+          "text": "Zawijasz znalezione rzeczy w tobołek."
+        }
+      ],
+      "choices": [
+        {
+          "destination": 17,
+          "description": "Rozglądasz się dalej za czymś przydatnym."
+        },
+        {
+          "destination": null,
+          "description": "Idziesz w głąb wyspy."
+        }
+      ]
+    },
+
+    {
+      "id": 17,
+      "location": "Wyspa",
+      "story": [
+        {
+          "text": "Szukasz dalej jednak nie udaje ci sie znaleźć niczego co mogłoby ci się później przydać."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Idziesz w głąb wyspy."
         }
       ]
     }
