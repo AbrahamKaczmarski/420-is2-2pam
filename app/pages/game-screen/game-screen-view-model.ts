@@ -82,13 +82,22 @@ export class GameViewModel extends Observable {
   private addStoryParagraph(text: string) {
     const label = new Label();
     label.text = text;
+    label.textWrap = true;
     this._story.addChild(label);
   }
 
   private addChoiceButton({ description, destination }: Choice) {
     const button = new Button();
     button.text = description;
-    button.addEventListener("tap", () => this.goTo(destination));
+    if (destination !== null) {
+      if (destination >= 0) {
+        button.addEventListener("tap", () => this.goTo(destination));
+      } else {
+        button.addEventListener("tap", () =>
+          this._page.frame.navigate("main-menu")
+        );
+      }
+    }
     this._choices.addChild(button);
   }
 
