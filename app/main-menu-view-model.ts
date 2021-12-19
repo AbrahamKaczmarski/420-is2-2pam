@@ -10,10 +10,4 @@ export class MenuViewModel extends Observable {
     const page: Page = button.page;
     page.frame.navigate("pages/campaign-select/campaign-select");
   }
-
-  onAbout(args: EventData) {
-    const button: Button = <Button>args.object;
-    const page: Page = button.page;
-    page.frame.navigate("pages/about/about");
-  }
 }
