@@ -433,7 +433,7 @@
           "description": "Rozglądasz się dalej za czymś przydatnym."
         },
         {
-          "destination": null,
+          "destination": 18,
           "description": "Idziesz w głąb wyspy."
         }
       ]
@@ -449,8 +449,54 @@
       ],
       "choices": [
         {
-          "destination": null,
+          "destination": 18,
           "description": "Idziesz w głąb wyspy."
+        }
+      ]
+    },
+
+    {
+      "id": 18,
+      "location": "Wyspa",
+      "story": [
+        {
+          "text": "Przedzierasz się przez gęstą dżunglę. Jest bardzo gorąco, w powietrzu czuć wilgoć."
+        },
+        {
+          "text": "Po kolku godzinach marszu czujesz zmęczenie. Robisz sobie przerwę pod jednym z pobliskich drzew. Czujesz głód i pragnienie."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Najdasz się do syta oraz wypijasz zapas wody."
+        },
+        {
+          "destination": null,
+          "description": "Porcjujesz zapasy, aby starczyły na później."
+        }
+      ]
+    },
+
+    {
+      "id": 19,
+      "location": "Wyspa",
+      "story": [
+        {
+          "text": "Po posileniu się i odpoczynku idziesz dalej."
+        },
+        {
+          "text": "Znajdujesz ślady butów odbite w ziemi."
+        }
+      ],
+      "choices": [
+        {
+          "destination": null,
+          "description": "Podążasz za znalezionymi śladami."
+        },
+        {
+          "destination": null,
+          "description": "Idziesz w innym kierunku."
         }
       ]
     }
