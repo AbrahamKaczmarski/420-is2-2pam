@@ -5,15 +5,16 @@ import {
   Observable,
   Page,
   StackLayout,
+  Http,
 } from "@nativescript/core";
-import { Campaign } from "~/types";
-
-import campaigns from "../../levels";
+import { API_URL } from "~/global";
 
 export class CampaignSelectViewModel extends Observable {
   private _page: Page;
   private _title: string;
   private _campaignList: StackLayout;
+
+  private _debug: string;
 
   constructor(page: Page) {
     super();
@@ -21,8 +22,16 @@ export class CampaignSelectViewModel extends Observable {
     this._page = page;
     this._title = "Campaign select";
     this._campaignList = page.getViewById("campaigns");
+    this._debug = "No errors yet";
 
-    campaigns.forEach((e) => this.addCampaign(e));
+    Http.getJSON(API_URL).then(
+      (campaigns: any) => {
+        campaigns.forEach((title, id) => this.addCampaign({ id, title }));
+      },
+      (err) => {
+        this.debug = err;
+      }
+    );
   }
 
   get title(): string {
@@ -36,7 +45,18 @@ export class CampaignSelectViewModel extends Observable {
     }
   }
 
-  private addCampaign(c: Campaign) {
+  get debug(): string {
+    return this._debug;
+  }
+
+  set debug(value: string) {
+    if (this._debug !== value) {
+      this._debug = value;
+      this.notifyPropertyChange("debug", value);
+    }
+  }
+
+  private addCampaign(c: { id: number; title: string }) {
     const button = new Button();
     button.text = c.title;
     button.addEventListener("tap", () => {
