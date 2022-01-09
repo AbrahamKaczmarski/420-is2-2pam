@@ -3,8 +3,6 @@
     <StackLayout class="p-20">
         <Button text="Main menu" tap="{{ onMainMenu }}" class="-primary" />
         <Label text="Choose a campaign" class="h1" textWrap="true" />
-        <Label text="{{ debug }}" textWrap="true" />
-        <StackLayout id="cached-campaigns"></StackLayout>
         <StackLayout id="campaigns"></StackLayout>
     </StackLayout>
 </Page>
