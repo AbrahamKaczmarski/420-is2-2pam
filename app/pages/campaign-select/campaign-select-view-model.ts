@@ -26,7 +26,7 @@ export class CampaignSelectViewModel extends Observable {
 
     Http.getJSON(API_URL).then(
       (campaigns: any) => {
-        campaigns.forEach((title, id) => this.addCampaign({ id, title }));
+        campaigns.forEach((title, id) => this.addCampaign(id, title));
       },
       (err) => {
         this.debug = err;
@@ -56,12 +56,14 @@ export class CampaignSelectViewModel extends Observable {
     }
   }
 
-  private addCampaign(c: { id: number; title: string }) {
+  private addCampaign(id: number, title: string) {
     const button = new Button();
-    button.text = c.title;
+    button.text = title;
     button.addEventListener("tap", () => {
-      global.campaign = c;
-      this._page.frame.navigate("pages/game-screen/game-screen");
+      Http.getJSON(`${API_URL}/${id}`).then((story) => {
+        global.campaign = story;
+        this._page.frame.navigate("pages/game-screen/game-screen");
+      });
     });
     this._campaignList.addChild(button);
   }
