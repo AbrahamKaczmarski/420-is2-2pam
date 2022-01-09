@@ -28,12 +28,6 @@ export class GameViewModel extends Observable {
 
     this._id = 0;
     this.updateScene();
-    // this._documents = knownFolders.currentApp();
-
-    // TODO: read json from file system
-    // this._documents.getEntities().then((files) => {
-    //   this._story = files.length.toFixed();
-    // });
   }
 
   get title(): string {
