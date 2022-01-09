@@ -2,6 +2,5 @@
     <ActionBar title="Gamebook" icon="" />
     <FlexboxLayout flexDirection="column" justifyContent="center" class="p-20">
         <Button text="New game" tap="{{ onNewGame }}" class="-primary"  />
-        <Button text="Continue game" tap="{{  }}" class="-primary"  />
     </FlexboxLayout>
 </Page>

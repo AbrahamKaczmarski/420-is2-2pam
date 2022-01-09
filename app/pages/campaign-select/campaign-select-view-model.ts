@@ -1,7 +1,5 @@
 import {
   Button,
-  EventData,
-  Label,
   Observable,
   Page,
   StackLayout,
@@ -17,7 +15,8 @@ export class CampaignSelectViewModel extends Observable {
   private _campaignList: StackLayout;
   private _cachedList: StackLayout;
 
-  private _debug: string;
+  private _noConnection: string;
+  private _cacheEmpty: boolean;
 
   constructor(page: Page) {
     super();
@@ -26,24 +25,8 @@ export class CampaignSelectViewModel extends Observable {
     this._title = "Campaign select";
     this._campaignList = page.getViewById("campaigns");
     this._cachedList = page.getViewById("cached-campaigns");
-    this._debug = "No errors yet";
 
-    const cached = storage.getAllKeys();
-
-    cached.forEach((key) => {
-      this.displayCachedCampaign(key);
-    });
-
-    Http.getJSON(API_URL).then(
-      (campaigns: any) => {
-        campaigns.forEach(
-          (title, id) => !cached.includes(title) && this.addCampaign(id, title)
-        );
-      },
-      (err) => {
-        this.debug = err;
-      }
-    );
+    this.refresh();
   }
 
   get title(): string {
@@ -57,15 +40,47 @@ export class CampaignSelectViewModel extends Observable {
     }
   }
 
-  get debug(): string {
-    return this._debug;
+  get cacheEmpty(): boolean {
+    return this._cacheEmpty;
   }
 
-  set debug(value: string) {
-    if (this._debug !== value) {
-      this._debug = value;
-      this.notifyPropertyChange("debug", value);
+  set cacheEmpty(value: boolean) {
+    if (this._cacheEmpty !== value) {
+      this._cacheEmpty = value;
+      this.notifyPropertyChange("cacheEmpty", value);
     }
+  }
+
+  get noConnection(): string {
+    return this._noConnection;
+  }
+
+  set noConnection(value: string) {
+    if (this._noConnection !== value) {
+      this._noConnection = value;
+      this.notifyPropertyChange("noConnection", value);
+    }
+  }
+
+  private refresh() {
+    this._noConnection = "No new campaigns are available";
+
+    const cached = storage.getAllKeys();
+    this.cacheEmpty = cached.length === 0;
+
+    this._cachedList.removeChildren();
+    this._campaignList.removeChildren();
+
+    cached.forEach((key) => {
+      this.displayCachedCampaign(key);
+    });
+
+    Http.getJSON(API_URL).then((campaigns: any) => {
+      this.noConnection = "";
+      campaigns.forEach(
+        (title, id) => !cached.includes(title) && this.addCampaign(id, title)
+      );
+    });
   }
 
   private addCampaign(id: number, title: string) {
@@ -83,13 +98,18 @@ export class CampaignSelectViewModel extends Observable {
 
   private displayCachedCampaign(key: string) {
     const button = new Button();
-    const story = JSON.parse(storage.getString(key));
     button.text = `${key} (saved)`;
     button.addEventListener("tap", () => {
+      const story = JSON.parse(storage.getString(key));
       global.campaign = story;
       this._page.frame.navigate("pages/game-screen/game-screen");
     });
     this._cachedList.addChild(button);
+  }
+
+  clearCashe() {
+    storage.clear();
+    this.refresh();
   }
 
   onMainMenu() {

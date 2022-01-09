@@ -3,8 +3,9 @@
     <StackLayout class="p-20">
         <Button text="Main menu" tap="{{ onMainMenu }}" class="-primary" />
         <Label text="Choose a campaign" class="h1" textWrap="true" />
-        <Label text="{{ debug }}" textWrap="true" />
+        <Label text="{{ noConnection }}" textWrap="true" />
         <StackLayout id="cached-campaigns"></StackLayout>
+        <Button text="Remove saved campaigns" tap="{{ clearCashe }}" visibility="{{ cacheEmpty ? 'collapsed' : 'visible' }}" class="-primary"  />
         <StackLayout id="campaigns"></StackLayout>
     </StackLayout>
 </Page>

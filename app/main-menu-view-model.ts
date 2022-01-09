@@ -1,4 +1,5 @@
 import { Button, EventData, Observable, Page } from "@nativescript/core";
+import * as storage from "@nativescript/core/application-settings";
 
 export class MenuViewModel extends Observable {
   constructor() {
