@@ -5,7 +5,10 @@ import {
   Observable,
   Page,
   StackLayout,
+  Image,
+  ImageCache,
 } from "@nativescript/core";
+import { IMG_URL } from "~/global";
 
 import { Choice } from "~/types";
 
@@ -16,7 +19,6 @@ export class GameViewModel extends Observable {
   private _location: string;
   private _story: StackLayout;
   private _choices: StackLayout;
-  // private _documents: Folder;
 
   constructor(page: Page) {
     super();
@@ -64,7 +66,11 @@ export class GameViewModel extends Observable {
     // -- story paragraphs
     this._story.removeChildren();
     level.story.forEach((segment) => {
-      this.addStoryParagraph(segment.text);
+      if (segment.image) {
+        this.displayImage(segment.image);
+      } else if (segment.text) {
+        this.addStoryParagraph(segment.text);
+      }
     });
     // -- choice buttons
     this._choices.removeChildren();
@@ -78,6 +84,18 @@ export class GameViewModel extends Observable {
     label.text = text;
     label.textWrap = true;
     this._story.addChild(label);
+  }
+
+  private displayImage(name: string) {
+    const url = `${IMG_URL}/${global.imgPrefix}/${name}.jpg`;
+    const image = new Image();
+    const img = global.imageCache.get(url);
+    if (!img) {
+      image.src = url;
+    } else {
+      image.src = img;
+    }
+    this._story.addChild(image);
   }
 
   private addChoiceButton({ description, destination }: Choice) {

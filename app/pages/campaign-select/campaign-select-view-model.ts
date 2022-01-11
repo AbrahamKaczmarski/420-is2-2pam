@@ -4,10 +4,13 @@ import {
   Page,
   StackLayout,
   Http,
+  ImageCache,
+  Image,
 } from "@nativescript/core";
 import * as storage from "@nativescript/core/application-settings";
 
-import { API_URL } from "~/global";
+import { API_URL, IMG_URL } from "~/global";
+import { Campaign } from "~/types";
 
 export class CampaignSelectViewModel extends Observable {
   private _page: Page;
@@ -25,6 +28,10 @@ export class CampaignSelectViewModel extends Observable {
     this._title = "Campaign select";
     this._campaignList = page.getViewById("campaigns");
     this._cachedList = page.getViewById("cached-campaigns");
+
+    if (!global.imageCache) {
+      global.imageCache = new ImageCache();
+    }
 
     this.refresh();
   }
@@ -87,9 +94,11 @@ export class CampaignSelectViewModel extends Observable {
     const button = new Button();
     button.text = title;
     button.addEventListener("tap", () => {
-      Http.getJSON(`${API_URL}/${id}`).then((story) => {
+      Http.getJSON<Campaign>(`${API_URL}/${id}`).then((story) => {
+        global.imgPrefix = title;
         global.campaign = story;
         storage.setString(title, JSON.stringify(story));
+        this.cacheImages(title, story);
         this._page.frame.navigate("pages/game-screen/game-screen");
       });
     });
@@ -101,6 +110,7 @@ export class CampaignSelectViewModel extends Observable {
     button.text = `${key} (saved)`;
     button.addEventListener("tap", () => {
       const story = JSON.parse(storage.getString(key));
+      global.imgPrefix = key;
       global.campaign = story;
       this._page.frame.navigate("pages/game-screen/game-screen");
     });
@@ -114,5 +124,22 @@ export class CampaignSelectViewModel extends Observable {
 
   onMainMenu() {
     this._page.frame.navigate("main-menu");
+  }
+
+  private cacheImages(title: string, campaign: Campaign) {
+    campaign.levels.forEach((level) => {
+      level.story.forEach(({ image }) => {
+        if (image) {
+          const url = `${IMG_URL}/${title}/${image}.jpg`;
+          const img = global.imageCache.get(url);
+          if (!img) {
+            global.imageCache.push({
+              key: url,
+              url: url,
+            });
+          }
+        }
+      });
+    });
   }
 }

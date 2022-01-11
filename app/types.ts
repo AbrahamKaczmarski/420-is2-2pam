@@ -4,7 +4,8 @@ export type Campaign = {
     id: number;
     location: string;
     story: {
-      text: string;
+      image?: string;
+      text?: string;
     }[];
     choices: {
       destination: number;
